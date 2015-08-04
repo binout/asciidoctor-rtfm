@@ -1,5 +1,26 @@
 = Asciidoctor RTFM
 benoit.prioux@gmail.com
+:icons: font
+
+image::bordeauxjug.png[float="right"]
+
+== Me
+
+image::avatar.png[float="right"]
+
+icon:twitter[] @binout +
+icon:github[] https://github.com/binout
+
+* Développeur Java depuis 10 ans
+
+image::asciidoctor.png[float="right"]
+
+* Commiteur Asciidoctor
+
+image::lectra.png[float="right"]
+
+* Technical Leader chez Lectra,
+numéro un mondial des solutions dédiées à l'industrie du textile (machines et logiciels)
 
 == Plan
 

@@ -1,0 +1,51 @@
+<project xmlns:asciidoctor="antlib:org.asciidoctor.ant" default="all">
+	<property name="maven.central" value="http://repo1.maven.org/maven2"/>
+	<property name="asciidoctor-version" value="1.5.1"/>
+	<property name="github" value="https://github.com"/>
+	<property name="deckjs-version" value="1.1.0"/>
+
+    <target name="asciidoctor-def">
+			  <mkdir dir="${basedir}/lib"/>
+        <get src="${maven.central}/org/asciidoctor/asciidoctor-ant/${asciidoctor-version}/asciidoctor-ant-${asciidoctor-version}.jar"
+             dest="${basedir}/lib/asciidoctor-ant-${asciidoctor-version}.jar" usetimestamp="true"/>
+        <taskdef uri="antlib:org.asciidoctor.ant" resource="org/asciidoctor/ant/antlib.xml" classpath="${basedir}/lib/asciidoctor-ant-${asciidoctor-version}.jar"/>
+    </target>
+
+		<target name="install-deckjs">
+				<mkdir dir="${basedir}/lib"/>
+				<get src="${github}/imakewebthings/deck.js/archive/${deckjs-version}.zip"
+						 dest="${basedir}/lib/deck.js-${deckjs-version}.zip" usetimestamp="true"/>
+		</target>
+
+    <target name="clean">
+        <delete dir="${basedir}/dist"/>
+				<mkdir dir="${basedir}/dist"/>
+    </target>
+
+    <macrodef name="generate-slide">
+			  <attribute name="src"/>
+			  <sequential>
+        <asciidoctor:convert
+					sourceDirectory="${basedir}"
+					sourceDocumentName="@{src}"
+					outputDirectory="${basedir}/dist"
+					templateDir="${basedir}/asciidoctor-backends/haml"
+					backend="deckjs"
+					sourceHighlighter="coderay">
+						<attribute key="deckjs_theme" value="swiss"/>
+						<attribute key="deckjs_transition" value="fade"/>
+						<attribute key="navigation" value="true"/>
+						<attribute key="goto" value="true"/>
+						<attribute key="status" value="true"/>
+						<resource dir="${basedir}/images"/>
+        </asciidoctor:convert>
+				<unzip src="${basedir}/lib/deck.js-${deckjs-version}.zip" dest="${basedir}/dist"/>
+				<move file="${basedir}/dist/deck.js-${deckjs-version}" tofile="${basedir}/dist/deck.js"/>
+			</sequential>
+    </macrodef>
+
+		<target name="all" depends="asciidoctor-def,install-deckjs,clean">
+			<generate-slide src="asciidoctor-rtfm.adoc"/>
+		</target>
+
+</project>
