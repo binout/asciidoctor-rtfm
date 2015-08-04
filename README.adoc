@@ -1,0 +1,4 @@
+= Asciidoctor RTFM
+benoit.prioux@gmail.com
+
+Material for a presentation of Asciidoctor Eco-System

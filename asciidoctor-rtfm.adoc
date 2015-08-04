@@ -1,0 +1,34 @@
+= Asciidoctor RTFM
+benoit.prioux@gmail.com
+
+== Plan
+
+* Asciidoctor
+** Asciidoc - Asciidoctor
+** Démo Atom
+** Exemple de syntaxe
+
+* Eco-système
+** Docker
+** Java
+*** Asciidoctorj
+*** Ant
+*** Maven
+*** Gradle
+*** Javadoc
+** Javascript
+*** asciidoctor.js
+*** Extension Chrome/Firefox
+** Extensions
+*** diagram
+*** custom
+
+
+* Cas d'utilisation
+** Ecrire un manuel d'utilisation
+** Faire une présentation
+** Ecrire la documentation de mon projet
+*** Javadoc
+*** README.adoc (plugin intellij)
+*** REST API
+** Ecrire un blog
