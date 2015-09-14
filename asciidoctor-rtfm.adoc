@@ -22,6 +22,139 @@ image::lectra.png[float="right"]
 * Technical Leader chez Lectra,
 numéro un mondial des solutions dédiées à l'industrie du textile (machines et logiciels)
 
+[canvas-image="images/writing-is-my-hobby.jpg"]
+== Writing is my hobby
+
+== Une solution : Asciidoc
+
+image::asciidoc.png[]
+
+* Langage de _balisage_ léger, créé en 2002 par Stuart Rackham avec un processeur en `Python`
+
+* Concurrent : Markdown, DocBook XML, …
+
+* Format pris en charge par GitHub, GitLab, …
+
+== Asciidoc c'est bien ...
+
+[options="step"]
+Parce que :
+
+[options="step"]
+* on se concentre plus sur le fond que sur la forme
+* c'est du texte, donc un éditeur classique suffit
+* on peut gérer l'historique avec un SCM
+* à partir d'une même source, on peut publier vers plusieurs formats
+* on a un peu l'impression de hacker ;-)
+
+== Exemple
+
+[source]
+----
+= Hello, Bordeaux JUG !
+Benoit Prioux <benoit.prioux@gmail.com>
+
+Introduction à http://asciidoc.org[AsciiDoc].
+
+== Première Section
+
+* foo
+* bar
+
+== Deuxième Section
+
+1. item 1
+2. item 2
+
+NOTE: C'est l'heure de la démo !
+----
+
+== Asciidoctor
+
+image:dan-allen.png[float="right"]
+
+https://github.com/asciidoctor
+
+* Implémentation open-source écrite en `Ruby`
+* Permet de convertir des fichiers `asciidoc` vers différents backends : `docbook`, `html5`, `epub`, `pdf` ...
+* 12 août 2014 : sortie de la version `1.5.0`
+** 1^ère^ version majeure après 2 ans de développement
+** 50 contributeurs, 1800 commits, 1500 tests
+* 27 novembre 2014 : version `1.5.2`
+
+[canvas-image="images/use-asciidoctor.jpg"]
+== Ils utilisent déjà `asciidoctor`
+[role="canvas-caption"]
+Ils utilisent déjà `asciidoctor`
+
+== Installation
+
+.Ruby : gem install
+----
+$ gem install asciidoctor
+----
+
+.Linux package managers
+----
+$ sudo yum install -y rubygem-asciidoctor
+----
+----
+$ sudo apt-get install -y asciidoctor
+----
+
+== Commandes
+
+.Génération d’un fichier monfichier.html (html5 par défaut)
+----
+$ asciidoctor monfichier.adoc
+----
+
+----
+$ asciidoctor -­D <output> -­T <template> -­r <requirements> monfichier.adoc
+----
+
+== Docker
+// DEMO
+
+== Je suis développeur `Java`
+
+[options="step"]
+image:jruby.png[]
+
+[options="step"]
+image:asciidoctorj.png[]
+
+== Asciidoctorj
+
+.https://github.com/asciidoctor/asciidoctorj
+[source,java]
+----
+Asciidoctor asciidoctor = Asciidoctor.Factory.create();
+
+Options options = options().backend("html5").get();
+String rendered = asciidoctor.convert("*Gras* ou _italique_ ?", options);
+
+System.out.println(rendered);
+----
+
+[options="step"]
+.Console
+[source,html]
+----
+<div class="paragraph">
+<p><strong>Gras</strong> ou <em>italique</em> ?</p>
+</div>
+----
+
+== Démo
+
+// Serveur
+
+== La documentation dans mon projet
+
+* Javadoc
+* Documents dans le projet
+
 == Plan
 
 * Asciidoctor
