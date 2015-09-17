@@ -153,7 +153,97 @@ System.out.println(rendered);
 == La documentation dans mon projet
 
 * Javadoc
-* Documents dans le projet
+* Commité en même temps que les sources
+** `src/main/asciidoc/`
+* Intégration des outils de build
+
+== Exemple Javadoc
+
+== Exemple Maven
+
+.https://github.com/asciidoctor/asciidoctor-maven-plugin
+[source,xml]
+----
+<plugin>
+  <groupId>org.asciidoctor</groupId>
+  <artifactId>asciidoctor-maven-plugin</artifactId>
+  <version>1.5.0</version>
+  <executions>
+    <execution>
+      <id>output-html</id>
+      <phase>generate-resources</phase>
+      <goals>
+        <goal>process-asciidoc</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
+----
+
+== Exemple Gradle
+
+.https://github.com/asciidoctor/asciidoctor-gradle-plugin
+[source,groovy]
+[subs="attributes"]
+----
+buildscript {
+    repositories {
+      jcenter()
+    }
+
+    dependencies {
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.0'
+    }
+}
+
+apply plugin: 'org.asciidoctor.gradle.asciidoctor'
+----
+
+== Exemple Ant
+
+.https://github.com/asciidoctor/asciidoctor-ant
+[source,xml]
+----
+<project xmlns:asciidoctor="antlib:org.asciidoctor.ant">
+...
+    <target name="doc">
+        <taskdef uri="antlib:org.asciidoctor.ant"
+                 resource="org/asciidoctor/ant/antlib.xml"
+                 classpath="lib/asciidoctor-ant-1.5.0.jar"/>
+
+        <asciidoctor:convert sourceDirectory="src/asciidoc" outputDirectory="target"/>
+    </target>
+...
+</project>
+----
+
+== Je suis développeur `Javascript`
+
+[options="step"]
+image:opal.png[]
+
+[options="step"]
+image:asciidoctorjs.png[]
+
+== Asciidoctor.js
+
+.https://github.com/asciidoctor/asciidoctor.js
+[source, javascript]
+----
+var content = "http://asciidoctor.org[*Asciidoctor*] " +
+    "running on http://opalrb.org[_Opal_] " +
+    "brings AsciiDoc to the browser!";
+
+var options = Opal.hash2(['doctype', 'attributes'], {doctype: 'inline', attributes: ['showtitle']});
+
+var html = Opal.Asciidoctor.$convert(asciidoc, options);
+
+console.log(html);
+----
+
+== Asciidoctor.js et Chrome
+
+image:asciidoctor-chrome.png[]
 
 == Plan
 
