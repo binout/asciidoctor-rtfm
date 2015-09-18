@@ -66,14 +66,21 @@ Introduction à http://asciidoc.org[AsciiDoc].
 1. item 1
 2. item 2
 
-NOTE: C'est l'heure de la démo !
 ----
+
+== Syntaxe
+
+image::asciidoc-cheatsheet.png[]
 
 == Asciidoctor
 
-image:dan-allen.png[float="right"]
+image::asciidoctor-header.png[]
 
 https://github.com/asciidoctor
+
+== Asciidoctor, le projet
+
+image::dan-allen.png[float="right"]
 
 * Implémentation open-source écrite en `Ruby`
 * Permet de convertir des fichiers `asciidoc` vers différents backends : `docbook`, `html5`, `epub`, `pdf` ...
@@ -113,8 +120,9 @@ $ asciidoctor monfichier.adoc
 $ asciidoctor -­D <output> -­T <template> -­r <requirements> monfichier.adoc
 ----
 
-== Docker
-// DEMO
+== asciidoctor/docker-asciidoctor
+
+image::docker-asciidoctor.png[]
 
 == Je suis développeur `Java`
 
@@ -146,18 +154,30 @@ System.out.println(rendered);
 </div>
 ----
 
-== Démo
+== La documentation dans mon projet Java
 
-// Serveur
+* Soit dans le code : `javadoc`
 
-== La documentation dans mon projet
+* Soit dans un répertoire à côté de mes sources :
 
-* Javadoc
-* Commité en même temps que les sources
-** `src/main/asciidoc/`
-* Intégration des outils de build
+** `src/main/asciidoc`
+** intégration des outils de build : Maven, Gradle, Ant
 
 == Exemple Javadoc
+
+image::javadoc.png[float="right"]
+
+[source, java]
+.https://github.com/asciidoctor/asciidoclet
+----
+/**
+ * This class has the following features:
+ *
+ * - Support for *foo*
+ * - Support for bar
+ */
+public class Thing implements Something { ... }
+----
 
 == Exemple Maven
 
@@ -225,7 +245,7 @@ image:opal.png[]
 [options="step"]
 image:asciidoctorjs.png[]
 
-== Asciidoctor.js
+== asciidoctor.js
 
 .https://github.com/asciidoctor/asciidoctor.js
 [source, javascript]
@@ -241,38 +261,39 @@ var html = Opal.Asciidoctor.$convert(asciidoc, options);
 console.log(html);
 ----
 
-== Asciidoctor.js et Chrome
+== Extension Chrome
 
 image:asciidoctor-chrome.png[]
 
-== Plan
+== asciidoctor-cli.js
 
-* Asciidoctor
-** Asciidoc - Asciidoctor
-** Démo Atom
-** Exemple de syntaxe
+https://github.com/asciidoctor/asciidoctor-cli.js
 
-* Eco-système
-** Docker
-** Java
-*** Asciidoctorj
-*** Ant
-*** Maven
-*** Gradle
-*** Javadoc
-** Javascript
-*** asciidoctor.js
-*** Extension Chrome/Firefox
-** Extensions
-*** diagram
-*** custom
+[source]
+----
+npm install -g asciidoctor-cli
+----
 
+[source]
+----
+asciidoctorjs fichier.adoc
+----
 
-* Cas d'utilisation
-** Ecrire un manuel d'utilisation
-** Faire une présentation
-** Ecrire la documentation de mon projet
-*** Javadoc
-*** README.adoc (plugin intellij)
-*** REST API
-** Ecrire un blog
+== On peut tout faire avec Asciidoc
+
+image::couteau-suisse.png[]
+
+== Ecrire un manuel d'utilisation
+
+.http://asciidoctor.org/docs/user-manual/
+image::asciidoctor-user-manual.png[]
+
+== Faire une présentation
+
+image::deck-js.png[]
+
+image::reveal-js.png[]
+
+== Ecrire un blog
+
+image::hubpress-demo.png[]

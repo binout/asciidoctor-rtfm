@@ -1,0 +1,66 @@
+= La syntaxe
+benoit.prioux@gmail.com
+:icons: font
+:version: 1.5
+
+== Attributs
+
+version : {version}
+
+icon:twitter[] @binout
+
+== Les puces
+
+=== Classique
+
+* Point 1
+* Point 2
+* Point 2.1
+
+=== Numérotée
+
+. Item 1
+. Item 2
+.. Item 2.1
+
+== Format
+
+Je peux écrire en *gras*, ou en _italique_, ou en `monospace`.
+
+Je peux surligner du #texte#.
+
+Je peux faire des liens : http://www.google.fr[Google]
+
+== Tableau
+
+[options="header"]
+|===
+|Col 1 | Col2
+|A11 | A12
+|B21 | B22
+|===
+
+[options="header",format="csv"]
+|===
+Col 1,Col2
+A11,A12
+B21,B22
+|===
+
+== Code Source
+
+.Java
+[source, java]
+----
+public class Jug {
+  private String name;
+}
+----
+
+.Js
+[source, javascript]
+----
+{
+  "name" : "bordeauxjug"
+}
+----
