@@ -72,6 +72,10 @@ Introduction à http://asciidoc.org[AsciiDoc].
 
 image::asciidoc-cheatsheet.png[]
 
+== Démo
+
+image::atom-demo.png[]
+
 == Asciidoctor
 
 image::asciidoctor-header.png[]
@@ -187,7 +191,7 @@ public class Thing implements Something { ... }
 <plugin>
   <groupId>org.asciidoctor</groupId>
   <artifactId>asciidoctor-maven-plugin</artifactId>
-  <version>1.5.0</version>
+  <version>1.5.2</version>
   <executions>
     <execution>
       <id>output-html</id>
@@ -212,7 +216,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.0'
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.2'
     }
 }
 
@@ -265,6 +269,23 @@ console.log(html);
 
 image:asciidoctor-chrome.png[]
 
+== DocGist
+
+http://gist.asciidoctor.org/
+
+DocGist is a URL proxy tool that converts AsciiDoc documents fetched from :
+
+* Gists (http://gist.github.com)
+* GitHub repositories
+* Dropbox folders
+* and other sources
+
+to HTML.
+
+== asciidoctor et gulp
+
+image::gulp.png[]
+
 == asciidoctor-cli.js
 
 https://github.com/asciidoctor/asciidoctor-cli.js
@@ -279,14 +300,71 @@ npm install -g asciidoctor-cli
 asciidoctorjs fichier.adoc
 ----
 
-== On peut tout faire avec Asciidoc
+[canvas-image="images/puzzle.jpg"]
+== Et bien plus encore ...
+[role="canvas-caption"]
+Asciidoctor est extensible ...
+
+== asciidoctor-diagram
+
+image:asciiart.png[]
+
+image:diagram.png[]
+
+Plus d'informations avec Mehdi "Je code ma doc" à BDX/IO
+
+== Les autres extensions
+
+http://asciidoctor.org/docs/extensions/
+
+* Asciidoctor LaTeX : conversion Asciidoc to LaTex
+* Asciidoctor Screenshot : permet d'inclure dynamiquement des screenshots
+[source]
+----
+[screenshot, url=http://google.fr, name=google, dimension=FRAME_IMAC]
+Google Landing page
+----
+* Monotree : permet de visualiser des structures d'arbre
+
+== Et si je veux faire une extension, dois-je coder en `ruby` ?
+
+[options="step"]
+*Nouveau* : on peut coder des extensions directement en Java, Groovy, Scala
+
+[options="step"]
+[source, asciidoc]
+----
+twitter:binout[]
+----
+
+[options="step"]
+devient :
+
+[options="step"]
+[source, html]
+----
+<a href="http://www.twitter.com/binout">@binout</a>
+----
+
+== Avec Asciidoctor, on peut vraiment tout faire !
 
 image::couteau-suisse.png[]
 
+== Documenter une API REST
+
+http://blog.ninja-squad.com/2014/02/25/rest-api-doc-with-asciidoctor-and-gradle/
+
+image::rest-api-doc-result.png[]
+
 == Ecrire un manuel d'utilisation
 
-.http://asciidoctor.org/docs/user-manual/
 image::asciidoctor-user-manual.png[]
+
+== Ecrire un livre
+
+Ninja Squad a écrit son ebook sur AngularJs avec Asciidoctor
+
+image::ninjasquad.png[]
 
 == Faire une présentation
 
@@ -297,3 +375,7 @@ image::reveal-js.png[]
 == Ecrire un blog
 
 image::hubpress-demo.png[]
+
+== Merci
+
+image::bountysource.png[]
