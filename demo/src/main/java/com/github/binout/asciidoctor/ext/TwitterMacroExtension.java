@@ -13,10 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.binout;
+package com.github.binout.asciidoctor.ext;
 
 import org.asciidoctor.Asciidoctor;
-import org.asciidoctor.extension.JavaExtensionRegistry;
 import org.asciidoctor.extension.spi.ExtensionRegistry;
 
 public class TwitterMacroExtension implements ExtensionRegistry {

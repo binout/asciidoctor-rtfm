@@ -3,7 +3,7 @@
 	<property name="asciidoctor-version" value="1.5.1"/>
 
     <target name="asciidoctor-def">
-			  <mkdir dir="${basedir}/lib"/>
+		<mkdir dir="${basedir}/lib"/>
         <get src="${maven.central}/org/asciidoctor/asciidoctor-ant/${asciidoctor-version}/asciidoctor-ant-${asciidoctor-version}.jar"
              dest="${basedir}/lib/asciidoctor-ant-${asciidoctor-version}.jar" usetimestamp="true"/>
         <taskdef uri="antlib:org.asciidoctor.ant" resource="org/asciidoctor/ant/antlib.xml" classpath="${basedir}/lib/asciidoctor-ant-${asciidoctor-version}.jar"/>

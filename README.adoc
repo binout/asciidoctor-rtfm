@@ -2,3 +2,85 @@
 benoit.prioux@gmail.com
 
 Material for a presentation of Asciidoctor Eco-System
+
+== Slides
+
+[source]
+----
+ant
+----
+
+== Demo
+
+=== Syntaxe
+
+* les sections
+* les puces
+* format
+* tableau
+* code source
+* attribut
+
+=== Docker
+
+[source]
+----
+docker run -it -v /Users/benoit/Coding/asciidoctor/asciidoctor-rtfm:/documents/ asciidoctor/docker-asciidoctor
+----
+
+[source]
+----
+asciidoctor README.adoc
+asciidoctor-pdf README.adoc
+----
+
+=== Asciidoctorj
+
+Example Java API
+
+=== Javadoc
+
+[source]
+----
+mvn javadoc:javadoc
+----
+
+=== Maven
+
+[source]
+----
+mvn package
+----
+
+=== Gradle
+
+[source]
+----
+gradle asciidoctor
+----
+
+=== Ant
+
+[source]
+----
+ant
+----
+
+== DocGist
+
+http://gist.asciidoctor.org/
+https://github.com/asciidoctor/asciidoctor-ant/blob/master/README.adoc
+
+== Asciidoctor.js
+
+[source]
+----
+asciidoctorjs README.adoc
+----
+
+== Extension
+
+[source]
+----
+twitter:binout[]
+----

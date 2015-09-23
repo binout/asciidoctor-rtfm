@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.binout;
+package com.github.binout.asciidoctor;
 
 import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.Options;
@@ -39,7 +39,7 @@ public class Example {
         Asciidoctor asciidoctor = Asciidoctor.Factory.create();
 
         Options options = OptionsBuilder.options().backend("html5").get();
-        String rendered = asciidoctor.convert("*Gras* ou _italique_ ? {version}", options);
+        String rendered = asciidoctor.convert("*Gras* ou _italique_ ?", options);
 
         System.out.println(rendered);
     }
